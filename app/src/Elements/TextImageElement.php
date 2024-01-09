@@ -24,7 +24,6 @@ class TextImageElement extends BaseElement
     private static $db = [
         "Text" => "HTMLText",
         "Variant" => "Varchar(20)",
-        "Highlight" => "Varchar(20)",
         "ImgWidth" => "Varchar(20)",
         "ButtonText" => "Varchar(50)",
         "ButtonLink" => "Varchar(500)"
@@ -61,15 +60,9 @@ class TextImageElement extends BaseElement
             "image-right" => "Bild rechts",
         ]));
         $fields->replaceField('ImgWidth', new DropdownField('ImgWidth', 'Bildbreite', [
-            "image-30" => "30%",
-            "image-40" => "40%",
+            "image-25" => "25%",
             "image-50" => "50%",
-            "image-60" => "60%",
-            "image-70" => "70%",
-        ]));
-        $fields->replaceField('Highlight', new DropdownField('Highlight', 'Highlight', [
-            "" => "Kein Highlight",
-            "highlighted" => "Highlight",
+            "image-75" => "75%",
         ]));
         return $fields;
     }

@@ -10,7 +10,7 @@ $breakpoints: (
 
 $HeaderHeight: 120px;
 
-$ColorPrimary: #1E3755;
+$ColorPrimary: #148C82;
 $ColorSecondary: #C9A141;
 
 $ColorBlack: #000000;
@@ -20,6 +20,6 @@ $ColorFont: $ColorBlack;
 $ColorBackground: $ColorWhite;
 
 $ColorPrimaryLight: lighten($ColorPrimary, 60%);
-$ColorPrimaryDark: darken($ColorPrimary, 5%);
+$ColorPrimaryDark: #063B37;
 $ColorSecondaryLight: lighten($ColorSecondary, 60%);
 $ColorSecondaryDark: darken($ColorSecondary, 50px);

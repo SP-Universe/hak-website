@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b5a7aa8f6e1cd83a5df2cc6f8f144cfe",
+    "content-hash": "397537be1ebc948e42fafa8b871b436b",
     "packages": [
         {
             "name": "atwx/silverstripe-vitehelper",
@@ -986,6 +986,77 @@
                 }
             ],
             "time": "2022-05-21T17:30:32+00:00"
+        },
+        {
+            "name": "jonom/focuspoint",
+            "version": "5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jonom/silverstripe-focuspoint.git",
+                "reference": "5090ba59fc1ebdaff6b1ab2af089b7753f2f0ba2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jonom/silverstripe-focuspoint/zipball/5090ba59fc1ebdaff6b1ab2af089b7753f2f0ba2",
+                "reference": "5090ba59fc1ebdaff6b1ab2af089b7753f2f0ba2",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1",
+                "silverstripe/asset-admin": "^2"
+            },
+            "require-dev": {
+                "silverstripe/recipe-testing": "^3"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "expose": [
+                    "client"
+                ],
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JonoM\\FocusPoint\\": "src/",
+                    "JonoM\\FocusPoint\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathon Menz",
+                    "homepage": "http://jonathonmenz.com"
+                }
+            ],
+            "description": "Smarter automatic image cropping for SilverStripe",
+            "keywords": [
+                "crop",
+                "cropping",
+                "focus",
+                "focuspoint",
+                "image",
+                "silverstripe"
+            ],
+            "support": {
+                "issues": "https://github.com/jonom/silverstripe-focuspoint/issues",
+                "source": "https://github.com/jonom/silverstripe-focuspoint/tree/5.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/jmnz",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/jonom",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-05-16T21:14:44+00:00"
         },
         {
             "name": "league/csv",

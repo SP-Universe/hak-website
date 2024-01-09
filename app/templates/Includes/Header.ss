@@ -1,8 +1,21 @@
 <header>
+    <div class="header_topbar">
+        <ul class="header_topbar_menu">
+            <% loop $Menu(1) %>
+                <% if $MenuPosition == "topbar" %>
+                    <li class="topbar_menu_item">
+                        <a href="$Link" class="topbar_menu_item_link">$MenuTitle</a>
+                    </li>
+                <% end_if %>
+            <% end_loop %>
+        </ul>
+    </div>
     <div class="header_nav">
-        <a href="" class="nav_brand">
-            <img src="_resources/app/client/icons/nav_brand.svg">
-        </a>
+        <div class="nav_brand_wrap">
+            <a href="" class="nav_brand">
+                <img src="_resources/app/client/icons/nav_brand.png">
+            </a>
+        </div>
         <div class="nav_menu">
             <% loop $Menu(1) %>
                 <% if $MenuPosition == "main" %>

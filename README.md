@@ -1,4 +1,4 @@
-# Standard Silverstripe Template
+# Historischer Arbeitskreis Ahrensburg
 with Vite, SCSS and more
 
 ## Installation

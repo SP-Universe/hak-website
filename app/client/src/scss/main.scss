@@ -11,14 +11,19 @@
 @import "layout/header.scss";
 
 @import "layout/TextImageElement.scss";
-@import "layout/TextElement.scss";
+@import "layout/BannerElement.scss";
 
 .section {
     max-width: $maxWidth;
+
+    &:first-of-type{
+        margin-top: 60px;
+    }
 }
 
 .section_content{
-    max-width: $maxWidthContent;
+    max-width: $maxWidth;
+    margin: 0 auto;
 }
 
 //Styles to make the footer stick to the bottom of the page
