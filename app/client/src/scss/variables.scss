@@ -1,0 +1,25 @@
+$maxWidth: 1200px;
+$maxWidthContent: 980px;
+
+$breakpoints: (
+  'smartphone': 480px,
+  'medium': 700px,
+  'desktop': 1000px,
+  'maxWidth': $maxWidth,
+);
+
+$HeaderHeight: 120px;
+
+$ColorPrimary: #1E3755;
+$ColorSecondary: #C9A141;
+
+$ColorBlack: #000000;
+$ColorWhite: #FFF;
+
+$ColorFont: $ColorBlack;
+$ColorBackground: $ColorWhite;
+
+$ColorPrimaryLight: lighten($ColorPrimary, 60%);
+$ColorPrimaryDark: darken($ColorPrimary, 5%);
+$ColorSecondaryLight: lighten($ColorSecondary, 60%);
+$ColorSecondaryDark: darken($ColorSecondary, 50px);

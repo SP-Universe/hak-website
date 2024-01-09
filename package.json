@@ -1,0 +1,22 @@
+{
+  "name": "silverstripe-template",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "main.js",
+  "author": "Adiwidjaja Teamworks GmbH",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies":
+    {"sass": "^1.69.6",
+    "vite": "^5.0.8"
+  },
+  "dependencies": {
+    "glightbox": "^3.0.9",
+    "include-media": "^1.4.10",
+    "swiper": "^9.0.4"
+  }
+}

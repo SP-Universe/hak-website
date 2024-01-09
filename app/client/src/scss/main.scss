@@ -1,0 +1,49 @@
+@import "include-media";
+@import "glightbox/dist/css/glightbox.css";
+@import 'swiper/swiper-bundle.css';
+
+@import "fonts.scss";
+@import "normalize.scss";
+@import "variables.scss";
+@import "typography.scss";
+
+@import "layout/footer.scss";
+@import "layout/header.scss";
+
+@import "layout/TextImageElement.scss";
+@import "layout/TextElement.scss";
+
+.section {
+    max-width: $maxWidth;
+}
+
+.section_content{
+    max-width: $maxWidthContent;
+}
+
+//Styles to make the footer stick to the bottom of the page
+body{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "content"
+        "footer";
+    width: 100%;
+
+    .area_header{
+        grid-area: header;
+    }
+
+    .area_content{
+        grid-area: content;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .area_footer{
+        grid-area: footer;
+    }
+}
