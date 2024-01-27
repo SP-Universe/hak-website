@@ -47,4 +47,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
             },
         });
     });
+
+    //Fixed Menu
+    window.addEventListener('scroll', () => {
+        if (document.documentElement.scrollTop > 39 || document.body.scrollTop > 39){
+            document.body.classList.add('menu--fixed');
+        } else {
+            document.body.classList.remove('menu--fixed');
+        }
+    });
 });
