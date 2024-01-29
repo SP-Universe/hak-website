@@ -1,4 +1,4 @@
-<footer>
+<!--<footer>
     <div class="footer_content">
         <div class="footer_text">Beispieltext</div>
         <div class="footer_text">Anderer Beispieltext</div>
@@ -15,3 +15,4 @@
         </div>
     </div>
 </footer>
+-->
