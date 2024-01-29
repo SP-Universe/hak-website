@@ -41,6 +41,10 @@
                 object-fit: cover;
             }
         }
+
+        @include media("<medium") {
+            padding-right: 0px;
+        }
     }
 
     .textimage_text {
@@ -70,6 +74,10 @@
             padding-left: 20px;
             padding-right: 0px;
             order: 2;
+
+            @include media("<medium") {
+                padding-left: 0px;
+            }
         }
     }
 
