@@ -11,7 +11,7 @@ use SilverStripe\Forms\DropdownField;
  *
  * @property string $SubTitle
  * @property int $Height
- * @property bool $StartPage
+ * @property string $Topline
  * @property int $ImageID
  * @method \SilverStripe\Assets\Image Image()
  */
@@ -21,7 +21,7 @@ class BannerElement extends BaseElement
     private static $db = [
         "SubTitle" => "Varchar(255)",
         "Height" => "Int",
-        "StartPage" => "Boolean",
+        "Topline" => "Varchar(255)",
     ];
 
     private static $has_one = [
@@ -34,6 +34,8 @@ class BannerElement extends BaseElement
 
     private static $field_labels = [
         "Image" => "Bild",
+        "Height" => "Höhe",
+        "Topline" => "kleine Überschrift",
     ];
 
     private static $defaults = [

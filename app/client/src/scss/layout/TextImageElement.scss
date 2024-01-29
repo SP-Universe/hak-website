@@ -1,8 +1,28 @@
 .section.section--textimage {
-    display: flex;
-    justify-content: space-between;
-    max-width: $maxWidthContent;
-    flex-wrap: wrap;
+    .section_content{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 0 20px;
+        max-width: $maxWidthContent;
+        @include media("<maxWidth") {
+            padding: 0 20px;
+        }
+
+        @include media("<medium") {
+            flex-direction: column;
+            align-items: center;
+
+            .textimage_text{
+                order: 1;
+            }
+            .textimage_image{
+                padding: 0;
+                order: 2;
+                width: 100%;
+            }
+        }
+    }
 
     .textimage_image {
         width: 100%;
@@ -42,18 +62,90 @@
         }
     }
 
-    @include media(">desktop") {
-        flex-wrap: nowrap;
-        margin: 50px auto;
+    &.image-right{
+        .textimage_text{
+            order: 1;
+        }
+        .textimage_image{
+            padding-left: 20px;
+            padding-right: 0px;
+            order: 2;
+        }
+    }
 
-        &.image-right{
-            .textimage_text{
-                order: 1;
-            }
+    &.image-25{
+        .textimage_image{
+            width: 25%;
+        }
+        .textimage_text{
+            width: 75%;
+        }
+        @include media("<medium") {
             .textimage_image{
-                padding-left: 20px;
-                padding-right: 0px;
-                order: 2;
+                width: 50%;
+            }
+            .textimage_text{
+                width: 100%;
+            }
+        }
+
+        @include media("<smartphone") {
+            .textimage_image{
+                width: 100%;
+            }
+            .textimage_text{
+                width: 100%;
+            }
+        }
+    }
+
+    &.image-50{
+        .textimage_image{
+            width: 50%;
+        }
+        .textimage_text{
+            width: 50%;
+        }
+        @include media("<medium") {
+            .textimage_image{
+                width: 50%;
+            }
+            .textimage_text{
+                width: 100%;
+            }
+        }
+        @include media("<smartphone") {
+            .textimage_image{
+                width: 100%;
+            }
+            .textimage_text{
+                width: 100%;
+            }
+        }
+    }
+
+    &.image-75{
+        .textimage_image{
+            width: 75%;
+        }
+        .textimage_text{
+            width: 25%;
+        }
+
+        @include media("<medium") {
+            .textimage_image{
+                width: 50%;
+            }
+            .textimage_text{
+                width: 100%;
+            }
+        }
+        @include media("<smartphone") {
+            .textimage_image{
+                width: 100%;
+            }
+            .textimage_text{
+                width: 100%;
             }
         }
     }

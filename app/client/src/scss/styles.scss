@@ -15,9 +15,11 @@
 
 .section {
     max-width: $maxWidth;
+    margin: 0 auto;
+    background-color: $ColorWhite;
 
     &:first-of-type{
-        margin-top: 60px;
+        padding-top: 60px;
     }
 }
 
@@ -37,6 +39,7 @@ body{
         "content"
         "footer";
     width: 100%;
+    background-color: $ColorGray;
 
     .area_header{
         grid-area: header;
@@ -50,5 +53,78 @@ body{
 
     .area_footer{
         grid-area: footer;
+    }
+}
+
+#MemberLoginForm_LoginForm{
+    display: inline-flex;
+    flex-direction: column;
+    width: auto;
+    margin: 150px auto;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background-color: $ColorPrimary;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    padding: 30px;
+    color: $ColorWhite;
+
+    a{
+        color: $ColorWhite;
+        border-bottom: 1px solid $ColorWhite;
+    }
+
+    .field{
+        margin: 10px auto;
+
+        &:first-of-type{
+            margin-top: 0;
+        }
+
+        &:last-of-type{
+            margin-bottom: 0;
+        }
+
+        input{
+            border: none;
+            border-bottom: 1px solid $ColorWhite;
+            padding: 5px;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            border-radius: 10px;
+
+            &:focus{
+                outline: none;
+                border-bottom: 1px solid $ColorSecondary;
+            }
+        }
+    }
+
+    .btn-toolbar{
+        input{
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px auto;
+            width: 100%;
+            background-color: $ColorSecondary;
+            color: $ColorWhite;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+
+            &:hover{
+                background-color: $ColorWhite;
+                color: $ColorSecondary;
+            }
+        }
+    }
+
+    fieldset{
+        border: none;
+        padding: 0;
+        margin: 0;
     }
 }
