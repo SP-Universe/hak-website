@@ -10,14 +10,13 @@ mix.setPublicPath(dist)
     // .webpackConfig({ devtool: "inline-source-map" })
     .sass(src + 'scss/styles.scss', dist + "css")
     .sass(src + 'scss/editor.scss', dist + "css")
-    .sass(src + 'scss/icons.scss', dist + "css")
     .js(src + 'js/main.js', dist + "js/main.js")
     .minify(dist + "css/styles.css")
     .minify(dist + "js/main.js")
     .sourceMaps(true)
     .version()
     .browserSync({
-        proxy: 'http://localhost/halloweenhaus-website/public',
+        proxy: 'http://localhost/hak-website/public',
         files: [
             "public/_resources/app/client/dist/css/*.css",
             "public/_resources/app/client/dist/js/*.js",

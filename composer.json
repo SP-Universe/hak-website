@@ -17,7 +17,8 @@
         "undefinedoffset/sortablegridfield": "^2.2"
     },
     "require-dev": {
-        "silverleague/ideannotator": "^3"
+        "silverleague/ideannotator": "^3",
+        "squizlabs/php_codesniffer": "^3.6"
     },
     "autoload": {
         "psr-4": {
@@ -27,8 +28,8 @@
     "extra": {
         "expose": [
             "app/client/dist",
-            "app/client/icons",
-            "app/client/images"
+            "app/client/src/images",
+            "app/client/icons"
         ],
         "resources-dir": "_resources",
         "project-files-installed": [
@@ -55,7 +56,8 @@
         "allow-plugins": {
             "composer/installers": true,
             "silverstripe/recipe-plugin": true,
-            "silverstripe/vendor-plugin": true
+            "silverstripe/vendor-plugin": true,
+            "kylekatarnls/update-helper": true
         }
     }
 }

@@ -89,4 +89,12 @@
             }
         }
     }
+
+    &.small{
+        height: 200px;
+
+        @include media("<medium") {
+            height: 210px;
+        }
+    }
 }

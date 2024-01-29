@@ -1,4 +1,4 @@
-<div class="section section--banner" style="height: calc({$Height}px - 100px)">
+<div class="section section--banner">
     <div class="section_background">
         <img src="{$Image.FocusFillMax(1200, $Height).Url}" />
     </div>

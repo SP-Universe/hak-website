@@ -140,6 +140,14 @@ header {
                         background-color: $ColorPrimaryDark;
                         color: $ColorWhite;
                     }
+
+                    @include media("<maxWidth") {
+                        padding: 10px 20px;
+                    }
+
+                    @include media("<desktop") {
+                        padding: 10px;
+                    }
                 }
 
                 @include media("<medium") {
@@ -253,5 +261,23 @@ header {
 
     @include media("<medium") {
         margin-bottom: -100px;
+    }
+}
+
+.section--banner{
+    .header_title{
+        display: inline;
+        width: auto;
+        margin: 0 auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $ColorWhiteTrans;
+        padding: 10px 20px;
+
+        @include media("<medium") {
+            transform: translateX(-50%);
+        }
     }
 }
