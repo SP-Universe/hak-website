@@ -11,7 +11,6 @@ use SilverStripe\Forms\DropdownField;
  *
  * @property string $Text
  * @property string $Variant
- * @property string $Highlight
  * @property string $ImgWidth
  * @property string $ButtonText
  * @property string $ButtonLink

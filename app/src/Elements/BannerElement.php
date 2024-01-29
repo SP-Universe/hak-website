@@ -9,6 +9,7 @@ use SilverStripe\Forms\DropdownField;
 /**
  * Class \App\Elements\TextImageElement
  *
+ * @property string $SubTitle
  * @property int $Height
  * @property bool $StartPage
  * @property int $ImageID
@@ -18,6 +19,7 @@ class BannerElement extends BaseElement
 {
 
     private static $db = [
+        "SubTitle" => "Varchar(255)",
         "Height" => "Int",
         "StartPage" => "Boolean",
     ];

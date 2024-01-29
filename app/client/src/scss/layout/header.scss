@@ -7,7 +7,7 @@ header {
 
     .header_topbar{
         background-color: $ColorPrimaryDark;
-        height: 39px;
+        height: 40px;
 
         .header_topbar_menu{
             max-width: $maxWidth;
@@ -17,6 +17,7 @@ header {
             list-style: none;
             padding: 0;
             max-height: 0px;
+            transition: 0.2s ease-out;
 
             .topbar_menu_item{
                 margin-left: 10px;
@@ -25,12 +26,22 @@ header {
                     display: block;
                     color: $ColorWhite;
                     background-color: $ColorPrimary;
+                    font-size: 14px;
+
+                    &:hover{
+                        background-color: $ColorPrimaryLight;
+                        color: $ColorPrimaryDark;
+                    }
                 }
             }
 
+            @include media("<maxWidth") {
+                padding-right: 10px;
+            }
+
             @include media("<medium") {
-                position: absolute;
-                top: 99px;
+                position: fixed;
+                top: 100px;
                 left: 0;
                 max-width: none;
                 z-index: 100;
@@ -40,7 +51,9 @@ header {
                 background-color: $ColorWhite;
                 overflow: hidden;
                 opacity: 0;
+                padding-right: 0;;
                 padding-top: 30px;
+                pointer-events: none;
 
                 .topbar_menu_item{
                     margin: 0 10px;
@@ -50,9 +63,14 @@ header {
                     }
                 }
 
+                .menu--fixed &{
+                    top: 60px;
+                }
+
                 .body--show &{
                     opacity: 1;
-                    max-height: 100px;
+                    max-height: 2000px;
+                    pointer-events: all;
                 }
             }
         }
@@ -68,6 +86,13 @@ header {
         left: 50%;
         transform: translate(-50%, 0);
         z-index: 105;
+        background-color: $ColorWhite;
+        top: 40px;
+        transition: top 0.2s ease-out;
+
+        .menu--fixed &{
+            top: 0px;
+        }
 
         .nav_brand_wrap{
             filter: drop-shadow(-1px 6px 5px rgba(50, 50, 0, 0.5));
@@ -83,6 +108,13 @@ header {
                 clip-path: polygon(100% 0, 100% 75%, 50% 100%, 0 75%, 0 0);
                 height: calc($HeaderHeight + ($HeaderHeight / 4));
                 background-color: $ColorWhite;
+                transition: padding 0.2s ease-in-out, 0.2s ease-out, height 0.2s ease-out, clip-path 0.2s ease-out;
+
+                .menu--fixed &{
+                    margin: 0 0 -20px 10px;
+                    height: 80px;
+                    padding: 15px;
+                }
 
                 img {
                     height: 100%;
@@ -100,23 +132,29 @@ header {
                         width: 100%;
                         object-fit: contain;
                     }
+
+                    .menu--fixed &{
+                        margin: 0 0 -40px 50%;
+                        height: 100px;
+                    }
                 }
             }
         }
 
         .nav_menu{
-            padding-left: 10px;
+            padding-left: 5px;
             .nav_link {
                 text-decoration: none;
                 display: inline-block;
-                margin: 10px 0;
-                padding: 10px 30px;
+                margin: 10px 5px;
+                padding: 6px 30px;
                 color: $ColorPrimary;
                 text-align: center;
+                font-size: 20px;
 
                 &:hover {
-                    background-color: $ColorPrimaryDark;
-                    color: $ColorWhite;
+                    background-color: $ColorPrimaryLight;
+                    color: $ColorFont;
                 }
 
                 &:active {
