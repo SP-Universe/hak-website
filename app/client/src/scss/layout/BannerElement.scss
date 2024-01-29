@@ -58,9 +58,6 @@
     }
 
     @include media("<medium"){
-        &:first-of-type{
-            padding-top: 23px;
-        }
 
         .section_text{
             position: absolute;
