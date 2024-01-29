@@ -45,6 +45,18 @@
             <% include Header %>
         </div>
         <main class="area_content main">
+                <% if $URLSegment != "home" %>
+                    <div class="section section--banner small">
+                        <div class="section_background">
+                            <img src=$SiteConfig.HeaderImage.FocusFillMax(1200, 150).Url />
+                        </div>
+                        <div class="section_content">
+                            <img src=$SiteConfig.HeaderImage.FocusFillMax(1200, 150).Url />
+                            <h1 class="header_title">$Title</h1>
+                        </div>
+                    </div>
+                <% end_if %>
+
                 $Layout
         </main>
         <div class="area_footer">
