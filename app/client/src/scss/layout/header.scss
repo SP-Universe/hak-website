@@ -277,7 +277,10 @@ header {
         padding: 10px 20px;
 
         @include media("<medium") {
-            transform: translateX(-50%);
+            top: 100px;
+            left: 0;
+            right: 0;
+            transform: none;
         }
     }
 }

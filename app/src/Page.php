@@ -20,6 +20,9 @@ namespace {
         ];
 
         private static $has_one = [];
+        private static $plural_name = 'Standard-Seiten';
+        private static $singular_name = 'Standard-Seite';
+        private static $description = "Eine Standard Seite mit Elementen";
 
         public function getCMSFields()
         {

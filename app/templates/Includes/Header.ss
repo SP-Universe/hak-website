@@ -14,7 +14,7 @@
         <div class="header_nav">
             <div class="nav_brand_wrap">
                 <a href="" class="nav_brand">
-                    <img src="_resources/app/client/icons/nav_brand.png">
+                    <img src="_resources/app/client/icons/nav_brand.svg">
                 </a>
             </div>
             <div class="nav_menu">

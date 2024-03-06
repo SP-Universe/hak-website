@@ -1,0 +1,102 @@
+.section.section--eventlist{
+    .section_content{
+        .section_list{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 10px;
+
+            .event_card{
+                padding: 10px;
+                .event_image{
+                    height: 300px;
+                    background-color: $ColorGray;
+                    position: relative;
+                    display: block;
+                    color: $ColorBlack;
+
+                    .event_image_content{
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+
+                        &.placeholder{
+                            padding: 20px;
+                            object-fit: contain;
+                        }
+                    }
+
+                    .event_image_copyright{
+                        position: absolute;
+                        bottom: 0;
+                        left: 100%;
+                        padding: 3px 10px;
+                        margin: 0;
+                        transform-origin: bottom left;
+                        width: auto;
+                        transform: rotate(-90deg);
+                        color: $ColorWhite;
+                        font-size: 12px;
+                        font-weight: 200;
+                        display: inline;
+                        background-color: $ColorBlackTrans;
+                    }
+
+                    .event_image_category{
+                        position: absolute;
+                        bottom: 10px;
+                        left: 10px;
+                        margin: 0;
+                        padding: 5px 10px;
+                        border-radius: 30px;
+                    }
+
+                    @include media("<medium") {
+                        height: 200px;
+                    }
+                }
+
+                .event_text{
+                    margin-top: 15px;
+
+                    .event_text_title{
+                        margin: 0;
+                        color: $ColorBlack;
+                    }
+
+                    .event_text_date{
+                        margin: 0;
+                        font-weight: 700;
+                        color: $ColorBlack;
+                    }
+
+                    .event_text_summary{
+                        margin-top: 10px;
+                    }
+                }
+            }
+
+            @include media("<medium"){
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}
+
+.section.section--eventview{
+    margin: 0 auto;
+    .section_content{
+        padding: 20px;
+
+        .event_category{
+            display: inline;
+            margin: 0;
+            padding: 5px 10px;
+            border-radius: 30px;
+        }
+
+        .event_date{
+            font-weight: 700;
+            font-size: 20px;
+        }
+    }
+}

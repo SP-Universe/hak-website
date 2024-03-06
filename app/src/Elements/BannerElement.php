@@ -12,6 +12,7 @@ use SilverStripe\Forms\DropdownField;
  * @property string $SubTitle
  * @property int $Height
  * @property string $Topline
+ * @property string $ImageCopyright
  * @property int $ImageID
  * @method \SilverStripe\Assets\Image Image()
  */
@@ -22,6 +23,7 @@ class BannerElement extends BaseElement
         "SubTitle" => "Varchar(255)",
         "Height" => "Int",
         "Topline" => "Varchar(255)",
+        "ImageCopyright" => "Varchar(255)",
     ];
 
     private static $has_one = [
@@ -36,6 +38,7 @@ class BannerElement extends BaseElement
         "Image" => "Bild",
         "Height" => "Höhe",
         "Topline" => "kleine Überschrift",
+        "ImageCopyright" => "Bildrechte",
     ];
 
     private static $defaults = [

@@ -11,8 +11,10 @@
 @import "layout/footer.scss";
 @import "layout/header.scss";
 
-@import "layout/TextImageElement.scss";
-@import "layout/BannerElement.scss";
+@import "elements/TextImageElement.scss";
+@import "elements/BannerElement.scss";
+
+@import "pages/EventsPage.scss";
 
 .section {
     max-width: $maxWidth;
