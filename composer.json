@@ -13,7 +13,8 @@
         "silverstripe/login-forms": "^5.1",
         "purplespider/silverstripe-basic-gallery-extension": "4",
         "dnadesign/silverstripe-elemental-userforms": "^4.1",
-        "undefinedoffset/sortablegridfield": "^2.2"
+        "undefinedoffset/sortablegridfield": "^2.2",
+        "innoweb/silverstripe-breadcrumbs": "dev-master"
     },
     "require-dev": {
         "silverleague/ideannotator": "^3",

@@ -12,11 +12,9 @@
     </div>
     <div class="header_nav_wrap">
         <div class="header_nav">
-            <div class="nav_brand_wrap">
-                <a href="" class="nav_brand">
-                    <img src="_resources/app/client/icons/nav_brand.svg">
-                </a>
-            </div>
+            <a href="" class="nav_brand">
+                <img src="_resources/app/client/icons/nav_brand.svg">
+            </a>
             <div class="nav_menu">
                 <% loop $Menu(1) %>
                     <% if $MenuPosition == "main" %>

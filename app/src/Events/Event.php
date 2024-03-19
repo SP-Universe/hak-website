@@ -17,11 +17,10 @@ use SilverStripe\View\Parsers\URLSegmentFilter;
  * Class \App\Team\TeamMember
  *
  * @property string $Title
- * @property string $Description
  * @property string $ShortDescription
  * @property string $Date
+ * @property string $EndTime
  * @property string $Location
- * @property string $Imagerights
  * @property string $LinkTitle
  * @property int $CategoryID
  * @property int $ImageID
@@ -32,11 +31,10 @@ class Event extends DataObject
 {
     private static $db = [
         "Title" => "Varchar(255)",
-        "Description" => "HTMLText",
         "ShortDescription" => "Varchar(512)",
         "Date" => "Datetime",
+        "EndTime" => "Time",
         "Location" => "Varchar(255)",
-        "Imagerights" => "Varchar(255)",
         "LinkTitle" => "Varchar(255)",
     ];
 

@@ -22,3 +22,6 @@ SilverStripe\Core\Injector\Injector:
 Silverstripe\SiteConfig\SiteConfig:
   extensions:
     - App\CustomSiteConfig
+
+Innoweb\Breadcrumbs\Extensions\SiteTreeExtension:
+  crumbs_include_home: false # default: true

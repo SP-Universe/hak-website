@@ -31,4 +31,42 @@ h2{
 a{
     cursor: pointer;
     text-decoration: none;
+
+    &.link--button {
+        background-color: $ColorPrimary;
+        color: $ColorWhite;
+        padding: 10px 20px;
+        transition: 0.2s ease-in-out;
+        text-transform: uppercase;
+
+        &:hover{
+            background-color: $ColorPrimaryLight;
+            color: $ColorPrimary;
+        }
+
+        &.download{
+            position: relative;
+            padding-right: 40px;
+
+            &::after{
+                content: "";
+                mask-image: url("../../icons/icon_download.svg");
+                background-color: $ColorWhite;
+                position: absolute;
+                top: 50%;
+                right: 20px;
+                width: 12px;
+                height: 12px;
+                transform: translateY(-50%);
+                transition: 0.2s ease-in-out;
+            }
+
+            &:hover{
+                &::after{
+                    background-color: $ColorPrimary;
+                    color: $ColorPrimaryLight;
+                }
+            }
+        }
+    }
 }

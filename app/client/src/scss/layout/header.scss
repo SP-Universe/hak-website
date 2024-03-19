@@ -1,12 +1,14 @@
 header {
     overflow: visible;
     max-width: 100%;
-    //background-color: $ColorPrimaryLight;
+    background-color: $ColorGray;
     width: 100%;
     filter: none;
+    display: block;
+    display: flex;
+    flex-direction: column;
 
     .header_topbar{
-        background-color: $ColorPrimaryDark;
         height: 40px;
 
         .header_topbar_menu{
@@ -21,11 +23,12 @@ header {
 
             .topbar_menu_item{
                 margin-left: 10px;
+
                 .topbar_menu_item_link{
                     padding: 10px 10px;
                     display: block;
-                    color: $ColorWhite;
-                    background-color: $ColorPrimary;
+                    color: $ColorFont;
+                    background-color: $ColorPrimaryLight;
                     transition: 0.2s ease-in-out;
 
                     &:hover{
@@ -34,18 +37,10 @@ header {
                     }
                 }
             }
-
-            @include media("<maxWidth") {
-                padding-right: 10px;
-            }
-
-            @include media("<medium") {
-                display: none;
-            }
         }
 
-        @include media("<medium") {
-            height: 50px;
+        @include media("<maxWidth") {
+            padding: 0 20px;
         }
     }
 
@@ -53,82 +48,57 @@ header {
         position: relative;
         width: 100%;
         z-index: 105;
-        background-color: $ColorWhite;
-        margin-bottom: -60px;
+        background-color: $ColorGray;
 
         .header_nav{
             width: 100%;
             max-width: $maxWidth;
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: center;
             margin: 0 auto;
 
-            .nav_brand_wrap{
-                filter: drop-shadow(-1px 6px 5px rgba(50, 50, 0, 0.5));
+            .nav_brand{
+                display: block;
+                height: $HeaderHeight;
+                width: auto;
+                margin-top: -40px;
                 transition: 0.3s ease-in-out;
 
-                .nav_brand{
-                    display: block;
-                    width: auto;
-                    padding: 20px;
-                    margin-top: -50px;
-                    margin-left: 20px;
-                    margin-bottom: calc(0px - ($HeaderHeight / 2));
-                    height: calc($HeaderHeight + ($HeaderHeight / 4));
-                    clip-path: polygon(100% 0, 100% 75%, 50% 100%, 0 75%, 0 0);
-                    height: calc($HeaderHeight + ($HeaderHeight / 4));
-                    background-color: $ColorWhite;
-                    transition: 0.3s ease-in-out;
-
-                    img {
-                        height: 100%;
-                    }
-
-                    @include media("<medium") {
-                        width: 200px;
-                        height: auto;
-                        max-width: 50%;
-                        margin-left: 50%;
-                        transform: translateX(-50%);
-
-                        img{
-                            height: 100%;
-                            width: 100%;
-                            object-fit: contain;
-                        }
-                    }
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: contain;
                 }
             }
 
             .nav_menu{
                 padding-left: 10px;
+                display: flex;
+                gap: 2px;
+
                 .nav_link {
                     text-decoration: none;
-                    display: inline-block;
-                    margin: 10px 0;
-                    padding: 10px 30px;
+                    display:  block;
+                    margin: 10px 0 0 0;
+                    padding: 0px 30px;
                     color: $ColorPrimary;
                     text-align: center;
                     transition: 0.2s ease-in-out;
+                    background-color: $ColorWhite;
+                    line-height: calc($HeaderHeight - 20px);
 
                     &.topbar_item{
                         display: none;
-
-                        @include media("<medium") {
-                            display: inline-block;
-                            border: 1px solid $ColorPrimary;
-                            padding: 7px 15px;
-                        }
                     }
 
                     &:hover {
-                        background-color: $ColorPrimaryDark;
+                        background-color: $ColorPrimary;
                         color: $ColorWhite;
                     }
 
                     &:active {
-                        background-color: $ColorPrimaryDark;
+                        background-color: $ColorPrimary;
                     }
 
                     &:focus {
@@ -137,40 +107,8 @@ header {
                     }
 
                     &.nav_link--active {
-                        background-color: $ColorPrimaryDark;
+                        background-color: $ColorPrimary;
                         color: $ColorWhite;
-                    }
-
-                    @include media("<maxWidth") {
-                        padding: 10px 20px;
-                    }
-
-                    @include media("<desktop") {
-                        padding: 10px;
-                    }
-                }
-
-                @include media("<medium") {
-                    position: absolute;
-                    display: flex;
-                    flex-direction: column;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    opacity: 0;
-                    overflow: hidden;
-                    transition: max-height 0.2s ease-out, opacity 0.3s ease-out;
-                    background-color: $ColorWhite;
-                    padding: calc($HeaderHeight + 20px) 10px 5px 10px;
-                    z-index: -1;
-
-                    .nav_link{
-                        margin: 5px 0;
-                        padding: 20px 30px;
-                    }
-
-                    .body--show & {
-                        opacity: 1;
                     }
                 }
             }
@@ -233,25 +171,24 @@ header {
                     }
                 }
             }
-
-            @include media("<medium") {
-                display: block;
-            }
         }
 
         @include media(">medium") {
             .menu--fixed &{
-                margin-top: -40px;
+                margin-top: -10px;
                 position: fixed;
                 margin-bottom: 0px;
+                box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
 
-                .nav_brand_wrap{
-                    margin-top: 30px;
-                    .nav_brand{
-                        height: 100px;
-                    }
+                .nav_brand{
+                    margin-top: 10px;
+                    padding: 10px;
                 }
             }
+        }
+
+        @include media("<maxWidth") {
+            padding: 0 20px;
         }
 
         @include media("<medium") {
@@ -261,26 +198,5 @@ header {
 
     @include media("<medium") {
         margin-bottom: -100px;
-    }
-}
-
-.section--banner{
-    .header_title{
-        display: inline;
-        width: auto;
-        margin: 0 auto;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: $ColorWhiteTrans;
-        padding: 10px 20px;
-
-        @include media("<medium") {
-            top: 100px;
-            left: 0;
-            right: 0;
-            transform: none;
-        }
     }
 }

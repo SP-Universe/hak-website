@@ -8,21 +8,21 @@ $breakpoints: (
   'maxWidth': $maxWidth,
 );
 
-$HeaderHeight: 120px;
+$HeaderHeight: 80px;
 
-$ColorPrimary: #148C82;
-$ColorSecondary: #939393;
+$ColorPrimary: #002a42;
+$ColorSecondary: #cfdae3;
 
 $ColorBlack: #000000;
 $ColorGray: #E5E5E5;
-$ColorWhite: #FFF;
+$ColorWhite: #FFFFFF;
 $ColorWhiteTrans: #ffffffd0;
 $ColorBlackTrans: #000000d0;
 
 $ColorFont: $ColorBlack;
 $ColorBackground: $ColorWhite;
 
-$ColorPrimaryLight: lighten($ColorPrimary, 60%);
-$ColorPrimaryDark: #063B37;
+$ColorPrimaryLight: #CFDAE3;
+$ColorPrimaryDark: darken($ColorPrimary, 20%);
 $ColorSecondaryLight: lighten($ColorSecondary, 60%);
-$ColorSecondaryDark: darken($ColorSecondary, 50px);
+$ColorSecondaryDark: darken($ColorSecondary, 20%);

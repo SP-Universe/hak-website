@@ -2,20 +2,16 @@
 
 namespace App;
 
-use SilverStripe\AssetAdmin\Forms\UploadField;
-use SilverStripe\Assets\Image;
+use App\Models\HeroImage;
 use SilverStripe\Forms\FieldList;
-use SilverStripe\Forms\TextField;
 use SilverStripe\ORM\DataExtension;
-use SilverStripe\Forms\CheckboxField;
-use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
+use SilverStripe\Forms\GridField\GridField;
+use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 
 /**
  * Class \App\CustomSiteConfig
  *
  * @property \SilverStripe\SiteConfig\SiteConfig|\App\CustomSiteConfig $owner
- * @property int $HeaderImageID
- * @method \SilverStripe\Assets\Image HeaderImage()
  */
 class CustomSiteConfig extends DataExtension
 {
@@ -23,16 +19,14 @@ class CustomSiteConfig extends DataExtension
     private static $db = [
     ];
 
-    private static $has_one = [
-        "HeaderImage" => Image::class,
+    private static $has_many = [
     ];
 
     private static $owns = [
-        "HeaderImage",
     ];
 
     public function updateCMSFields(FieldList $fields)
     {
-        $fields->addFieldToTab("Root.Main", new UploadField("HeaderImage", "Bild Kopfleiste"));
+
     }
 }

@@ -1,4 +1,5 @@
-import Swiper, {Autoplay, EffectCoverflow, EffectFade, Navigation, Pagination} from 'swiper';
+import Swiper from 'swiper/bundle';
+import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
 import GLightbox from "glightbox";
 
 document.addEventListener("DOMContentLoaded", function (event) {
@@ -17,43 +18,45 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
 
     // INIT SWIPER
-    const sliders = document.querySelectorAll('.swiper');
-    sliders.forEach(function (slider) {
-        const autoSwiper = slider.classList.contains('swiper--auto');
-        const swiper = new Swiper(slider, {
-            // configure Swiper to use modules
-            modules: [Pagination, Navigation, Autoplay, EffectFade],
-            effect: 'slide',
-            fadeEffect: {
-                crossFade: true
-            },
-            direction: 'vertical',
-            loop: true,
+    const swiper = new Swiper('.swiper', {
+        // configure Swiper to use modules
+        modules: [Pagination, Navigation, Autoplay, EffectFade],
+        effect: 'slide',
+        fadeEffect: {
+            crossFade: true
+        },
+        direction: 'horizontal',
+        loop: true,
 
-            autoplay: autoSwiper ? {
-                delay: 5000,
-            } : false,
+        autoplay: false,
 
-            // Navigation arrows
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
 
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'bullets',
-                clickable: true,
-            },
-        });
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true,
+        },
     });
 
     //Fixed Menu
     window.addEventListener('scroll', () => {
-        if (document.documentElement.scrollTop > 39 || document.body.scrollTop > 39){
+        if (document.documentElement.scrollTop > 59 || document.body.scrollTop > 59){
             document.body.classList.add('menu--fixed');
         } else {
             document.body.classList.remove('menu--fixed');
         }
+    });
+
+    // INIT Eventlist Collapsibles
+    const eventlist_collapsibles = document.querySelectorAll('[data-behaviour="eventlist_collapsible"]');
+    eventlist_collapsibles.forEach((collapsible) => {
+        collapsible.addEventListener('click', () => {
+            collapsible.classList.toggle('eventlist__item--active');
+        });
     });
 });

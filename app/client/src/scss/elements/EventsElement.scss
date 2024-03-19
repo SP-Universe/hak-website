@@ -1,0 +1,90 @@
+.section.section--eventlist{
+    .section_content{
+        .section_title{
+            h2{
+                margin-bottom: 0;
+            }
+        }
+
+        .section_eventlist{
+            .eventlist_item{
+                display: grid;
+                margin: 7px 0;
+                background-color: $ColorGray;
+                align-items: flex-start;
+                grid-template-columns: 50px 1fr;
+                grid-template-rows: 1fr auto;
+                overflow: hidden;
+
+                .eventlist_item_date{
+                    min-height: 80px;
+                    display: flex;
+                    flex-direction: column;
+                    background-color: $ColorPrimary;
+                    width: 50px;
+                    height: 100%;
+                    align-items: center;
+                    justify-content: center;
+                    color: $ColorWhite;
+                    grid-column-start: 1;
+                    grid-column-end: 2;
+                    grid-row-start: 1;
+                    grid-row-end: 3;
+
+                    .eventlist_item_date_day{
+                        font-size: 22px;
+                        margin: 0;
+                        font-weight: 700;
+                    }
+
+                    .eventlist_item_date_month{
+                        text-transform: uppercase;
+                        font-size: 12px;
+                    }
+                }
+
+                .eventlist_item_content{
+                    margin-top: 14px;
+                    padding-left: 20px;
+
+                    grid-row-start: 1;
+                    grid-row-end: 2;
+                    grid-column-start: 2;
+                    grid-column-end: 3;
+
+                    h3,p{
+                        margin: 0;
+                    }
+                }
+
+                .eventlist_item_description{
+                    padding-left: 20px;
+
+                    grid-row-start: 2;
+                    grid-row-end: 3;
+                    grid-column-start: 2;
+                    grid-column-end: 3;
+                    transition: all 0.3s ease-in-out;
+                    max-height: 0px;
+                    opacity: 0;
+
+                    h3,p{
+                        margin: 0;
+                    }
+                }
+
+                &.eventlist__item--active{
+                    .eventlist_item_description{
+                        opacity: 1;
+                        max-height: 500px;
+                        margin: 20px 0;
+                    }
+                }
+            }
+        }
+    }
+
+    @include media('<medium'){
+        padding: 0 20px;
+    }
+}
