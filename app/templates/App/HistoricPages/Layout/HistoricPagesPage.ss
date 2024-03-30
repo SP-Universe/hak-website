@@ -9,9 +9,11 @@ $ElementalArea
                         <img src="$Cover.URL" alt="$Cover.Title" />
                     </div>
                     <div class="historic_page_content">
-                        <h2>Nr. {$Number} $Title</h2>
-                        <p>$Description</p>
-                        <a href="$ReadingProbe.Url" target="_blank" class="link--button download">Leseprobe</a>
+                        <h2 class="historic_page_content_title">Nr. {$Number} $Title</h2>
+                        <div class="historic_page_content_description">
+                            $Description
+                        </div>
+                        <a href="$ReadingProbe.Url" target="_blank" class="historic_page_content_readingprobe link--button download">Leseprobe</a>
                     </div>
                 </div>
             <% end_loop %>

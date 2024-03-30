@@ -111,6 +111,13 @@ header {
                         color: $ColorWhite;
                     }
                 }
+
+                @include media("<medium"){
+                    max-height: 0px;
+                    opacity: 0;
+                    flex-direction: column;
+                    pointer-events: none;
+                }
             }
 
             .nav_button{
@@ -170,6 +177,10 @@ header {
                         }
                     }
                 }
+            }
+
+            @include media("<medium"){
+                padding: 10px 0;
             }
         }
 

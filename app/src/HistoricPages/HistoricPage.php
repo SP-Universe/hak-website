@@ -51,7 +51,6 @@ class HistoricPage extends DataObject
         "Title" => "Titel",
         "DateFormatted" => "Datum",
         "Location" => "Ort",
-        "Category.Title" => "Kategorie",
     ];
 
     private static $searchable_fields = [

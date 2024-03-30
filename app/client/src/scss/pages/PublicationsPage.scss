@@ -1,0 +1,64 @@
+.section.section--historicpages{
+    .section_content{
+        .section_content_list{
+            .historic_page{
+                display: flex;
+                align-items: center;
+                margin: 40px 0;
+                border: 1px solid $ColorPrimaryLight;
+                position: relative;
+                z-index: 0;
+
+                .historic_page_cover{
+                    width: 25%;
+                    flex-shrink: 0;
+                    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+                    transform: scale(1.04) rotate(-2deg) translateX(-5px);
+                    z-index: 3;
+                    position: relative;
+
+                    img{
+                        display: block;
+                        width: 100%;
+                        object-fit: contain;
+                    }
+
+                    @include media("<desktop"){
+                        width: 30%;
+                    }
+
+                    @include media("<medium"){
+                        width: 200px;
+                    }
+                }
+
+                .historic_page_content{
+                    padding: 20px 20px 20px 40px;
+
+                    .historic_page_content_title{
+                        margin: 0;
+                    }
+
+                    .historic_page_content_description{
+                        margin: 10px 0;
+                    }
+
+                    @include media("<medium"){
+                        padding: 20px;
+                    }
+                }
+
+                @include media("<medium"){
+                    flex-direction: column;
+                    border-left: none;
+                    border-right: none;
+                    border-top: none;
+                }
+            }
+
+            @include media("<medium"){
+                margin-top: 120px;
+            }
+        }
+    }
+}
