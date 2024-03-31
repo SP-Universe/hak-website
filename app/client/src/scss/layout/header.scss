@@ -42,6 +42,46 @@ header {
         @include media("<maxWidth") {
             padding: 0 20px;
         }
+
+        @include media("<desktop") {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            opacity: 0;
+            width: 100%;
+            height: 60px;
+            background-color: $ColorGray;
+
+            max-height: 0px;
+            transition: 0.1s ease-in-out;
+            z-index: 100;
+            pointer-events: none;
+
+            .header_topbar_menu{
+                justify-content: center;
+                gap: 20px;
+                height: 100%;
+                max-height: unset;
+
+                .topbar_menu_item{
+                    width: 50%;
+                    height: 100%;
+                    margin-left: 0;
+                    text-align: center;
+
+                    .topbar_menu_item_link{
+                        height: 100%;
+                        text-align: center;
+                    }
+                }
+            }
+
+            .body--show &{
+                opacity: 1;
+                max-height: 100px;
+                pointer-events: all;
+            }
+        }
     }
 
     .header_nav_wrap{
@@ -62,13 +102,17 @@ header {
                 display: block;
                 height: $HeaderHeight;
                 width: auto;
-                margin-top: -40px;
+                margin-top: 0px;
                 transition: 0.3s ease-in-out;
 
                 img {
                     height: 100%;
                     width: 100%;
                     object-fit: contain;
+                }
+
+                @include media(">desktop") {
+                    margin-top: -35px;
                 }
             }
 
@@ -112,21 +156,41 @@ header {
                     }
                 }
 
-                @include media("<medium"){
-                    max-height: 0px;
+                @include media("<desktop") {
+                    position: absolute;
+                    top: 160px;
+                    left: 0;
                     opacity: 0;
+                    width: 100%;
+                    background-color: $ColorGray;
+
+                    max-height: 0px;
+                    transition: 0.3s ease-in-out;
+                    z-index: 100;
                     flex-direction: column;
                     pointer-events: none;
+                    padding: 10px 20px 20px 20px;
+
+                    .header_topbar_menu{
+                        justify-content: center;
+                    }
+
+                    .body--show &{
+                        opacity: 1;
+                        max-height: 3000px;
+                        pointer-events: all;
+                    }
                 }
             }
 
             .nav_button{
                 display: none;
 
-                @include media("<medium") {
+                @include media("<desktop") {
                     display: inline-block;
                     position: absolute;
-                    top: 5px;
+                    top: 50%;
+                    transform: translateY(-50%);
                     right: 10px;
                     width: 50px;
                     height: 50px;
@@ -179,12 +243,12 @@ header {
                 }
             }
 
-            @include media("<medium"){
+            @include media("<desktop"){
                 padding: 10px 0;
             }
         }
 
-        @include media(">medium") {
+        @include media(">desktop") {
             .menu--fixed &{
                 margin-top: -10px;
                 position: fixed;
@@ -202,12 +266,8 @@ header {
             padding: 0 20px;
         }
 
-        @include media("<medium") {
+        @include media("<desktop") {
             background-color: transparent;
         }
-    }
-
-    @include media("<medium") {
-        margin-bottom: -100px;
     }
 }

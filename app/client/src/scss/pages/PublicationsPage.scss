@@ -25,10 +25,12 @@
 
                     @include media("<desktop"){
                         width: 30%;
+                        transform: scale(1.04) rotate(-2deg) translateX(5px);
                     }
 
                     @include media("<medium"){
                         width: 200px;
+                        margin-bottom: -100px;
                     }
                 }
 
@@ -45,6 +47,8 @@
 
                     @include media("<medium"){
                         padding: 20px;
+                        background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 10%);
+                        z-index: 5;
                     }
                 }
 
@@ -54,10 +58,6 @@
                     border-right: none;
                     border-top: none;
                 }
-            }
-
-            @include media("<medium"){
-                margin-top: 120px;
             }
         }
     }
