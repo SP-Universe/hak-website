@@ -29,6 +29,16 @@ h2{
     }
 }
 
+p{
+    &.text-center{
+        text-align: center;
+    }
+
+    &.text-right{
+        text-align: right;
+    }
+}
+
 a{
     cursor: pointer;
     text-decoration: none;
