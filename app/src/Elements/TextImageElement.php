@@ -59,6 +59,7 @@ class TextImageElement extends BaseElement
             "image-right" => "Bild rechts",
         ]));
         $fields->replaceField('ImgWidth', new DropdownField('ImgWidth', 'Bildbreite', [
+            "image-0" => "0%",
             "image-25" => "25%",
             "image-50" => "50%",
             "image-75" => "75%",

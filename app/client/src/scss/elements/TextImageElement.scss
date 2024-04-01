@@ -78,6 +78,16 @@
         }
     }
 
+    &.image-0{
+        .textimage_image{
+            width: 0%;
+            display: none;
+        }
+        .textimage_text{
+            width: 100%;
+        }
+    }
+
     &.image-25{
         .textimage_image{
             width: 25%;
