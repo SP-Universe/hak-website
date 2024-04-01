@@ -59,4 +59,24 @@ document.addEventListener("DOMContentLoaded", function (event) {
             collapsible.classList.toggle('eventlist__item--active');
         });
     });
+
+
+    // KnowledgeBase Search
+    const search_input = document.querySelector('[data-behaviour="knowledgebase-search"]');
+    if(search_input){
+        const search_entries = document.querySelectorAll('[data-behaviour="knowledgebase-entry"]');
+        search_input.addEventListener('keyup', (event) => {
+            const search_term = event.target.value.toLowerCase();
+            console.log("Searching for: " + search_term);
+            search_entries.forEach((entry) => {
+                const entry_title = entry.getAttribute('data-title').toLowerCase();
+                const entry_description = entry.getAttribute('data-description').toLowerCase();
+                if(entry_title.includes(search_term) || entry_description.includes(search_term)) {
+                    entry.classList.remove('hidden');
+                } else {
+                    entry.classList.add('hidden');
+                }
+            });
+        });
+    }
 });
