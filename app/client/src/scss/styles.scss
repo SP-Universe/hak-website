@@ -28,6 +28,10 @@
 .section_content{
     max-width: $maxWidth;
     margin: 0 auto;
+
+    @include media("<maxWidth") {
+        padding: 0 20px;
+    }
 }
 
 //Styles to make the footer stick to the bottom of the page

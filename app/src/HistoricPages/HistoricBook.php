@@ -10,57 +10,58 @@ use SilverStripe\ORM\DataObject;
 /**
  * Class \App\Team\TeamMember
  *
- * @property int $Number
+ * @property int $SortOrder
  * @property string $Title
+ * @property string $Author
+ * @property string $Version
  * @property string $Description
- * @property int $ReadingProbeID
  * @property int $CoverID
- * @method \SilverStripe\Assets\File ReadingProbe()
  * @method \SilverStripe\Assets\Image Cover()
  */
-class HistoricPage extends DataObject
+class HistoricBook extends DataObject
 {
     private static $db = [
-        "Number" => "Int",
+        "SortOrder" => "Int",
         "Title" => "Varchar(255)",
+        "Author" => "Varchar(255)",
+        "Version" => "Varchar(255)",
         "Description" => "HTMLText",
     ];
 
     private static $has_one = [
-        "ReadingProbe" => File::class,
         "Cover" => Image::class,
     ];
 
     private static $owns = [
         "Cover",
-        "ReadingProbe"
     ];
 
-    private static $default_sort = "Number ASC";
+    private static $default_sort = "SortOrder ASC";
 
     private static $field_labels = [
         "Number" => "Nummer",
         "Title" => "Titel",
+        "Author" => "Autor",
+        "Version" => "Version (Ausgabejahr/Auflage)",
         "Description" => "Beschreibung",
-        "ReadingProbe" => "Leseprobe",
         "Cover" => "Titelblatt",
     ];
 
     private static $summary_fields = [
-        "Number" => "Nummer",
         "Title" => "Titel",
+        "Author" => "Autor",
     ];
 
     private static $searchable_fields = [
-        "Number", "Title"
+        "Title"
     ];
 
-    private static $table_name = "HistoricPage";
+    private static $table_name = "HistoricBook";
 
-    private static $singular_name = "Historisches Blatt";
-    private static $plural_name = "Historische Blätter";
+    private static $singular_name = "Buch";
+    private static $plural_name = "Bücher";
 
-    private static $url_segment = "historic-page";
+    private static $url_segment = "historic-book";
 
     public function getCMSFields()
     {
