@@ -100,7 +100,6 @@ class KnowledgeBaseEntry extends DataObject
     }
 
     private static $extensions = [
-        Versioned::class,
         ElementalPageExtension::class,
     ];
 
