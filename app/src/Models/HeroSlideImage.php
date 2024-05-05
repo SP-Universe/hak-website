@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Elements\HeroElement;
+use App\KnowledgeBase\KnowledgeBaseEntry;
 use SilverStripe\Assets\Image;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Security\Permission;
@@ -14,10 +15,13 @@ use SilverStripe\SiteConfig\SiteConfig;
  * @property string $Title
  * @property string $Link
  * @property string $YoutubeLink
+ * @property string $Imagerights
  * @property int $SortOrder
  * @property int $ParentID
+ * @property int $LinkedKnowledgeID
  * @property int $ImageID
  * @method \App\Elements\HeroElement Parent()
+ * @method \App\KnowledgeBase\KnowledgeBaseEntry LinkedKnowledge()
  * @method \SilverStripe\Assets\Image Image()
  */
 class HeroSlideImage extends DataObject
@@ -26,11 +30,13 @@ class HeroSlideImage extends DataObject
         "Title" => "Varchar(255)",
         "Link" => "Varchar(255)",
         "YoutubeLink" => "Varchar(255)",
+        "Imagerights" => "Varchar(255)",
         "SortOrder" => "Int",
     ];
 
     private static $has_one = [
         "Parent" => HeroElement::class,
+        "LinkedKnowledge" => KnowledgeBaseEntry::class,
         "Image" => Image::class,
     ];
 
@@ -52,6 +58,8 @@ class HeroSlideImage extends DataObject
     private static $field_labels = [
         "Thumbnail" => "Bild",
         "Title" => "Titel",
+        "LinkedKnowledge" => "Verlinktes Wissen",
+        "Imagerights" => "Bildrechte",
     ];
 
     public function getThumbnail()

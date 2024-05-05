@@ -27,7 +27,8 @@ $ElementalArea
     </div>
 <% end_if %>
 
-<% if $HistoricBooks.Count > 0 %>
+<!--
+<% if $HistoricBooksXX.Count > 0 %>
     <div class="section section--historicbooks">
         <div class="section_content">
             <h2>$HistoricBooksTitle</h2>
@@ -53,3 +54,4 @@ $ElementalArea
         </div>
     </div>
 <% end_if %>
+-->

@@ -43,6 +43,36 @@ document.addEventListener("DOMContentLoaded", function (event) {
         },
     });
 
+    const heroSwiper = new Swiper('.heroswiper', {
+        // configure Swiper to use modules
+        modules: [Pagination, Navigation, Autoplay, EffectFade],
+        effect: 'slide',
+        fadeEffect: {
+            crossFade: true
+        },
+        direction: 'horizontal',
+        loop: true,
+
+        autoplay: false,
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.heroswiper-button-next',
+            prevEl: '.heroswiper-button-prev',
+        },
+
+        pagination: {
+            el: '.heroswiper-pagination',
+            type: 'bullets',
+            clickable: true,
+        },
+    });
+
+    if(heroSwiper && swiper){
+        heroSwiper.controller.control = swiper;
+        swiper.controller.control = heroSwiper;
+    }
+
     //Fixed Menu
     window.addEventListener('scroll', () => {
         if (document.documentElement.scrollTop > 59 || document.body.scrollTop > 59){

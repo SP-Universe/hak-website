@@ -45,22 +45,7 @@
             <% include Header %>
         </div>
         <main class="area_content main">
-                <!--<% if $CrumbsList %>
-                    <nav aria-label="Breadcrumb" class="breadcrumbs">
-                        <ul itemscope itemtype="http://schema.org/BreadcrumbList">
-                            <% loop $CrumbsList %>
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <% if not $IsFirst %>&gt;<% end_if %>
-                                    <a itemtype="http://schema.org/Thing" itemprop="item" href="$Link"<% if $IsLast %> aria-current="page"<% end_if %>>
-                                        <span itemprop="name">$Title</span>
-                                    </a>
-                                </li>
-                            <% end_loop %>
-                        </ul>
-                    </nav>
-                <% end_if %>-->
-
-                $Layout
+            $Layout
         </main>
         <div class="area_footer">
             <% include Footer %>

@@ -82,6 +82,18 @@
                 }
             }
         }
+
+        .section_allevents{
+            padding: 5px 10px;
+            background-color: $ColorPrimary;
+            margin-top: 10px;
+            color: $ColorWhite;
+            display: inline-block;
+
+            &:hover{
+                background-color: $ColorPrimaryDark;
+            }
+        }
     }
 
     @include media('<medium'){

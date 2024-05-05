@@ -9,9 +9,20 @@
                             <% if $YoutubeLink %>
                                 <iframe class="slide_image" width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/{$YoutubeLink}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             <% else %>
-                                <a data-gallery="gallery" data-glightbox="description: $Title" data-caption="$Title" class="slide_image" href="$Image.FitMax(2000,2000).URL">
+                                <!--<a data-gallery="gallery" data-glightbox="description: $Title" data-caption="$Title" class="slide_image" href="$Image.FitMax(2000,2000).URL">
                                     <img src="$Image.FocusFill(1200,600).Url" alt="$Title" />
-                                </a>
+                                </a>-->
+                                <% if $LinkedKnowledge %>
+                                    <a class="slide_image" href="$LinkedKnowledge.Link">
+                                        <img src="$Image.FocusFill(1200,600).Url" alt="$Title" />
+                                        <% if $Imagerights %><p class="slide_image_rights">$Imagerights</p><% end_if %>
+                                    </a>
+                                <% else %>
+                                    <div class="slide_image">
+                                        <img src="$Image.FocusFill(1200,600).Url" alt="$Title" />
+                                        <% if $Imagerights %><p class="slide_image_rights">$Imagerights</p><% end_if %>
+                                    </div>
+                                <% end_if %>
                             <% end_if %>
                         </div>
                     <% end_loop %>
@@ -24,7 +35,7 @@
 <div class="section section--hero hero--navigation">
     <div class="section_content">
         <div class="section_slider">
-            <div class="swiper swiper--text">
+            <div class="heroswiper swiper--text">
                 <div class="swiper-wrapper">
                     <% loop $Slides %>
                         <div class="swiper-slide">
