@@ -33,10 +33,15 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
+            display: block;
 
             @include media("<desktop") {
                 object-fit: cover;
             }
+        }
+
+        p{
+            margin-top: 0;
         }
 
         @include media("<medium") {
@@ -124,6 +129,37 @@
         @include media("<medium") {
             .textimage_image{
                 width: 50%;
+            }
+            .textimage_text{
+                width: 100%;
+            }
+        }
+        @include media("<smartphone") {
+            .textimage_image{
+                width: 100%;
+            }
+            .textimage_text{
+                width: 100%;
+            }
+        }
+    }
+
+    &.image-50centered{
+
+        .section_content{
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .textimage_image{
+            width: 50%;
+        }
+        .textimage_text{
+            width: 50%;
+        }
+        @include media("<medium") {
+            .textimage_image{
+                width: 75%;
             }
             .textimage_text{
                 width: 100%;

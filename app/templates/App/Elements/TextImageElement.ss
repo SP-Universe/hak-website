@@ -3,6 +3,7 @@
         <% if $Image %>
             <div class="textimage_image">
                 $Image.ScaleWidth(800)
+                <% if $ImageSubtitle %><p>$ImageSubtitle</p><% end_if %>
             </div>
         <% end_if %>
 

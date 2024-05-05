@@ -14,6 +14,7 @@ use SilverStripe\Forms\DropdownField;
  * @property string $ImgWidth
  * @property string $ButtonText
  * @property string $ButtonLink
+ * @property string $ImageSubtitle
  * @property int $ImageID
  * @method \SilverStripe\Assets\Image Image()
  */
@@ -25,7 +26,8 @@ class TextImageElement extends BaseElement
         "Variant" => "Varchar(20)",
         "ImgWidth" => "Varchar(20)",
         "ButtonText" => "Varchar(50)",
-        "ButtonLink" => "Varchar(500)"
+        "ButtonLink" => "Varchar(500)",
+        "ImageSubtitle" => "Varchar(255)",
     ];
 
     private static $has_one = [
@@ -62,6 +64,7 @@ class TextImageElement extends BaseElement
             "image-0" => "0%",
             "image-25" => "25%",
             "image-50" => "50%",
+            "image-50centered" => "50% zentriert",
             "image-75" => "75%",
         ]));
         return $fields;
