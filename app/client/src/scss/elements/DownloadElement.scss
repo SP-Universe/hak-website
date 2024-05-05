@@ -1,0 +1,17 @@
+.section.section--DownloadElement{
+    .section_content{
+        .section_download{
+            .section_download_button{
+                padding: 5px 10px;
+                background-color: $ColorPrimary;
+                margin-top: 0px;
+                color: $ColorWhite;
+                display: inline-block;
+
+                &:hover{
+                    background-color: $ColorPrimaryDark;
+                }
+            }
+        }
+    }
+}
