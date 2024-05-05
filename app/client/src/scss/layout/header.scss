@@ -111,6 +111,10 @@ header {
                     object-fit: contain;
                 }
 
+                .menu--fixed & {
+                    height: calc($HeaderHeight - 30px);
+                }
+
                 @include media(">desktop") {
                     margin-top: -35px;
                 }
@@ -120,17 +124,18 @@ header {
                 padding-left: 10px;
                 display: flex;
                 gap: 2px;
+                margin-top: 20px;
 
                 .nav_link {
                     text-decoration: none;
                     display:  block;
-                    margin: 10px 0 0 0;
-                    padding: 0px 30px;
+                    margin: 0px 0 0 0;
+                    padding: 0px 25px;
                     color: $ColorPrimary;
                     text-align: center;
                     transition: 0.2s ease-in-out;
                     background-color: $ColorWhite;
-                    line-height: calc($HeaderHeight - 20px);
+                    line-height: calc($HeaderHeight - 40px);
 
                     &.topbar_item{
                         display: none;
@@ -154,6 +159,10 @@ header {
                         background-color: $ColorPrimary;
                         color: $ColorWhite;
                     }
+                }
+
+                .menu--fixed & {
+                    margin-top: 10px;
                 }
 
                 @include media("<desktop") {
